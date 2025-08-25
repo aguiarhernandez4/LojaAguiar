@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+rel="stylesheet"/>
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+rel="stylesheet"/>
+
+    <link  href="@{css\reset.css}" rel="stylesheet">
+    <link th:href="@{\css\home.css}" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Aguiar</title>
+</head>
+<body>
+    <div class="display_inicial">
+        <nav class="nav-buttons">
+            <h1>Aguiar - Artigos de Pesca</h1>
+            <div>
+                <a href="/home">HOME</a>
+                <a href="/produtos">PRODUTOS</a>
+                <a href="/cadastro">CADASTRO/LOGIN</a>
+                <a href="https://www.instagram.com/joaopedroaguiarde/" target="_blank">INSTAGRAM</a>
+            </div>
+        </nav>
+    </div>
+
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
