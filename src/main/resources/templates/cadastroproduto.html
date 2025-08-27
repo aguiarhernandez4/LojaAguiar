@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org">
-<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
-rel="stylesheet"/>
-<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
-rel="stylesheet"/>
 
     <link  href="@{css\reset.css}" rel="stylesheet">
     <link th:href="@{\css\home.css}" rel="stylesheet">
@@ -29,6 +25,7 @@ rel="stylesheet"/>
     </div>
     <div class="form">
         <form th:action="@{/save}" method="post" class="col-md-4 offset-md-4">
+            <label for="novoproduto" style="text-align: center;">Novo Produto</label>
             <div class="mb-3">
                 <label for="name">Name</label>
                 <input type="text" name="name" class="form-control">
@@ -38,8 +35,8 @@ rel="stylesheet"/>
                 <input type="text" name="price" class="form-control">
             </div>
             <div class="mb-3">
-                <label for="descrition">Descrition</label>
-                <input type="text" name="descrition" class="form-control">
+                <label for="descricao">Descrition</label>
+                <input type="text" name="descricao" class="form-control">
             </div>
             <div class="mb-3 text-center my-2">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -48,8 +45,6 @@ rel="stylesheet"/>
     </div>
 
 
-    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>
 <style>
@@ -59,7 +54,6 @@ rel="stylesheet"/>
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0077cc, #66b3ff); /* degrade azul */
   padding: 20px;
 }
 
