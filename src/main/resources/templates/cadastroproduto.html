@@ -29,11 +29,21 @@ rel="stylesheet"/>
     </div>
     <div class="form">
         <form th:action="@{/save}" method="post" class="col-md-4 offset-md-4">
-            <div class="mb-3"></div>
-            <div class="mb-3"></div>
-            <div class="mb-3"></div>
-            <div class="mb-3"></div>
-            <div class="mb-3"></div>
+            <div class="mb-3">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="price">Price</label>
+                <input type="text" name="price" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="descrition">Descrition</label>
+                <input type="text" name="descrition" class="form-control">
+            </div>
+            <div class="mb-3 text-center my-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form> 
     </div>
 
@@ -42,3 +52,78 @@ rel="stylesheet"/>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 </html>
+<style>
+    /* Centraliza o formulário na tela */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0077cc, #66b3ff); /* degrade azul */
+  padding: 20px;
+}
+
+/* Caixa do formulário */
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Rótulos */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Campos de entrada */
+form input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+form input[type="text"]:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+/* Botão */
+form button {
+  width: 100%;
+  padding: 12px;
+  background: #0077cc;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+form button:hover {
+  background: #005fa3;
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
+}
+
+</style>

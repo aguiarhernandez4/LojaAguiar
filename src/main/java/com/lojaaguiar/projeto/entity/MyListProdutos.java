@@ -1,8 +1,8 @@
-package com.lojaaguiar.projeto.entity;
+// package com.lojaaguiar.projeto.entity;
 
-import jakarta.persistence.Entity;
+// import jakarta.persistence.Entity;
 
-@Entity
-public class MyListProdutos {
+// @Entity
+// public class MyListProdutos {
 
-}
+// }
