@@ -23,5 +23,25 @@ xmlns:th="http://www.thymeleaf.org">
             </div>
         </nav>
     </div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome do produto</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="produtos :${my_produtos}">
+                    <th th:text="${produtos.id}"></th>
+                    <th th:text="${produtos.name}"></th>
+                    <th th:text="${produtos.price}"></th>
+                    <th th:text="${produtos.descricao}"></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
