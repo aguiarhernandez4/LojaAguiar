@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org">
-
-    <link  href="@{css\reset.css}" rel="stylesheet">
+    
     <link th:href="@{\css\home.css}" rel="stylesheet">
 
 <head>
@@ -25,7 +24,7 @@ xmlns:th="http://www.thymeleaf.org">
     </div>
 
     <h1>Produtos Disponíveis</h1>
-    <div th:each="p : ${mostrarprodutos}">
+    <div th:each="p : ${produtos}">
         <h2 th:text="${p.name}"></h2>
         <p th:text="${p.descricao}"></p>
         <span th:text="${p.price}"></span>
@@ -33,3 +32,4 @@ xmlns:th="http://www.thymeleaf.org">
     </div>
 </body>
 </html>
+

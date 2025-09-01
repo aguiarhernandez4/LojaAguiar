@@ -1,14 +1,19 @@
 package com.lojaaguiar.projeto.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.lojaaguiar.projeto.service.ProdutosService;
 
 
 @Controller
 public class LojaController {
+    @Autowired
+    ProdutosService produtoService;
 
     @GetMapping("/home")
-    public String home(){
+    public String home() {
         return "home";
     }
 
@@ -28,8 +33,8 @@ public class LojaController {
     }
 
     @GetMapping("/cadastroproduto")
-    public String cadastro_produto(){
+    public String cadastro_produto() {
         return "cadastroproduto";
     }
-
 }
+
