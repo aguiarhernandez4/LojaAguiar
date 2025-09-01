@@ -19,11 +19,99 @@ xmlns:th="http://www.thymeleaf.org">
                 <a href="/produtos">PRODUTOS</a>
                 <a href="/cadastro">CADASTRO/LOGIN</a>
                 <a href="https://www.instagram.com/joaopedroaguiarde/" target="_blank">INSTAGRAM</a>
+                <a href="/login">Login</a>
                 <a href="/cadastroproduto">NOVO PRODUTO</a>
             </div>
         </nav>
+    </div>
+    <div class="form">
+        <form th:action="@{null}" method="post" class="col-md-4 offset-md-4">
+            <label for="areadelogin">Área de Login</label>
+            <div class="mb-3">
+                <label for="user">Usuário/Email</label>
+                <input type="text" name="user" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password">Senha</label>
+                <input type="text" name="password" class="form-control">
+            </div>
+            <div class="buttonne">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </div>
+        </form>
     </div>
 
 
 </body>
 </html>
+<style>
+    /* Container geral */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ocupa toda a altura da tela */
+    background: #f0f2f5; /* fundo suave */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Formulário */
+.form form {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Títulos e labels */
+.form label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Inputs */
+.form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+/* Botão */
+.buttonne button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttonne button:hover {
+    background: #0056b3;
+}
+
+/* Área de login */
+.form > form > label:first-of-type {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+</style>
