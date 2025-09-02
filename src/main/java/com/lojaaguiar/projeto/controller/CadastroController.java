@@ -16,9 +16,6 @@ import com.lojaaguiar.projeto.entity.Usuario;
 public class CadastroController {
     @Autowired
     UsuarioService usuarioService;
-    @Autowired
-    ProdutosController produtosController;
-
 
     @PostMapping("/saveuser")
     public String addUsuarios(@ModelAttribute Usuario u) {

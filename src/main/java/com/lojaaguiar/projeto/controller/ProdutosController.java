@@ -21,7 +21,9 @@ public class ProdutosController {
 
     @GetMapping("/mostrarprodutos")
     public String listarProdutos(Model model) {
-        model.addAttribute("produtos", produtoService.getAllProdutos());
-        return "produtos";
+         model.addAttribute("produtos", produtoService.getAllProdutos());
+         return "produtos";
     }
+
+
 }

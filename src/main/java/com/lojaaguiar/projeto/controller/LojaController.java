@@ -19,7 +19,7 @@ public class LojaController {
 
     @GetMapping("/produtos")
     public String produtos() {
-        return "produtos";
+        return "redirect:mostrarprodutos";
     }
 
     @GetMapping("/cadastro")

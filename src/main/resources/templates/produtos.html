@@ -24,13 +24,73 @@ xmlns:th="http://www.thymeleaf.org">
         </nav>
     </div>
 
-    <h1>Produtos Disponíveis</h1>
-    <div th:each="p : ${produtos}">
-        <h2 th:text="${p.name}"></h2>
-        <p th:text="${p.descricao}"></p>
-        <span th:text="${p.price}"></span>
-        <hr>
+
+    <h1 class="titulo-pagina">Produtos Disponíveis</h1>
+
+    <div class="lista-produtos">
+        <div class="produto" th:each="p : ${produtos}">
+            <h2 class="produto-nome" th:text="${p.name}"></h2>
+            <p class="produto-descricao" th:text="${p.descricao}"></p>
+            <span class="produto-preco" th:text="${p.price}"></span>
+        </div>
     </div>
+
+
+
 </body>
 </html>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f6fb; /* azul bem claro de fundo */
+  margin: 0;
+  padding: 0;
+}
 
+.titulo-pagina {
+  text-align: center;
+  color: #0d3b66; /* azul escuro */
+  margin: 2rem 0;
+}
+
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.produto {
+  background: #ffffff;
+  border: 1px solid #b3d4fc; /* azul clarinho */
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  border-color: #3a86ff; /* azul médio mais vivo */
+}
+
+.produto-nome {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  color: #1d3557; /* azul escuro */
+}
+
+.produto-descricao {
+  color: #457b9d; /* azul médio */
+  margin-bottom: .75rem;
+  font-size: 0.95rem;
+}
+
+.produto-preco {
+  font-weight: bold;
+  color: #0077b6; /* azul forte para destacar preço */
+  font-size: 1.1rem;
+}
+
+</style>
