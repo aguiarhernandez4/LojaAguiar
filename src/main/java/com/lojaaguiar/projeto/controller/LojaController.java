@@ -36,5 +36,7 @@ public class LojaController {
     public String cadastro_produto() {
         return "cadastroproduto";
     }
+
+    
 }
 
