@@ -1,9 +1,11 @@
 package com.lojaaguiar.projeto.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +17,10 @@ public class Produtos {
     private String name;
     private int price;
     private String descricao;
+
+    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    private byte[] imagem;
 
     public int getId(){return id;}
     public void setId(int id) {this.id = id;}
@@ -28,12 +34,16 @@ public class Produtos {
     public String getDescricao() {return descricao;}
     public void setDescricao(String descricao) {this.descricao = descricao;}
 
-    public Produtos(int id, String name, int price, String descricao) {
+    public byte[] getImagem() { return imagem; }
+    public void setImagem(byte[] imagem){ this.imagem = imagem;}
+
+    public Produtos(int id, String name, int price, String descricao, byte[] imagem) {
         super();
         this.id = id;
         this.name = name;
         this.price = price;
         this.descricao = descricao;
+        this.imagem = imagem;
     }
 
     public Produtos(){

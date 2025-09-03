@@ -39,6 +39,10 @@ xmlns:th="http://www.thymeleaf.org">
                 <label for="descricao">Descrition</label>
                 <input type="text" name="descricao" class="form-control">
             </div>
+            <div class="mb-3">
+              <label for="imagem">Adicione Sua Imagem</label>
+              <input type="file" name="imagem" accept="imagem/*"><br><br>
+            </div>
             <div class="mb-3 text-center my-2">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
@@ -121,4 +125,15 @@ form button:active {
   }
 }
 
+.mb-3 label {
+    color: #1e3a8a; /* azul escuro */
+    font-weight: bold;
+  }
+
+.mb-3 input[type="file"] {
+  border: 1px solid #3b82f6; /* azul médio */
+  border-radius: 4px;
+  padding: 6px;
+  background-color: #f0f9ff; /* azul bem clarinho */
+}
 </style>

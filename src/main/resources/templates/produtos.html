@@ -32,6 +32,8 @@ xmlns:th="http://www.thymeleaf.org">
             <h2 class="produto-nome" th:text="${p.name}"></h2>
             <p class="produto-descricao" th:text="${p.descricao}"></p>
             <span class="produto-preco" th:text="${p.price}"></span>
+            <img th:src="@{/imagens/{id}(id=${p.imagem})}" alt="Imagem do produto" />
+
         </div>
     </div>
 
