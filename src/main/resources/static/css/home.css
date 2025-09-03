@@ -104,13 +104,64 @@
     box-shadow: 0px 6px 10px rgba(0,0,0,0.3);
 }
 
-
-
-
-img {
-  width: 450px;
-  height: auto;
+.galeria-pesca {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+
+/* Cada item */
+.imagem-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Alterna posição da imagem e texto */
+.imagem-item.esquerda {
+    flex-direction: row;
+}
+
+.imagem-item.direita {
+    flex-direction: row-reverse;
+}
+
+.imagem-item img {
+    width: 50%;
+    border-radius: 15px;
+    transition: transform 0.4s;
+}
+
+.imagem-item:hover img {
+    transform: scale(1.08);
+}
+
+.descricao {
+    width: 50%;
+    padding: 20px;
+    background: rgba(173, 216, 230, 0.5);
+    color: #003366;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: background 0.4s;
+}
+
+.imagem-item:hover .descricao {
+    background: rgba(173, 216, 230, 0.7);
+}
+
+
     
     @media (max-width: 768px) {
       .nav-buttons {
