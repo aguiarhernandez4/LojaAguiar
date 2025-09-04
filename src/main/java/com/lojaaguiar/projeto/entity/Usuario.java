@@ -2,6 +2,7 @@ package com.lojaaguiar.projeto.entity;
 
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,10 +18,13 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @Column(name = "nome", length = 40, nullable = false, unique = false)
     private String nome;
+    @Column(name = "cpf", length = 11, nullable = false, unique = true)
     private String cpf;
+    @Column(name = "email", length = 30, nullable = false, unique = true)
     private String email;
+    @Column(name = "password", length = 15, nullable = false, unique = false)
     private String password;
 
     public int getId() {
