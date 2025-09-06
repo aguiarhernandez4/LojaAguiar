@@ -31,7 +31,7 @@ xmlns:th="http://www.thymeleaf.org">
         <div class="produto" th:each="p : ${produtos}">
             <h2 class="produto-nome" th:text="${p.name}"></h2>
             <p class="produto-descricao" th:text="${p.descricao}"></p>
-            <span class="produto-preco" th:text="${p.price}"></span>
+            <span class="produto-preco" th:text="'R$ ' + ${p.price}"></span>
             <a th:href="@{/deleteproduto/{id}(id = ${p.id})}" id="deletar">Deletar Anúncio</a>
             <img th:src="@{/imagem/{id}(id=${p.id})}" alt="Imagem do produto">
 

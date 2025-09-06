@@ -28,5 +28,9 @@ public class ProdutosService {
     public void deleteProdutosById(int id) {
         produtosRepo.deleteById(id);
     }
+    
+    public Produtos getProdutoById(int id) {
+    return produtosRepo.findById(id).orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+}
 
 }
