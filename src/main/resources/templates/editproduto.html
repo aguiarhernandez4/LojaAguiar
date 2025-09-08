@@ -25,28 +25,24 @@ xmlns:th="http://www.thymeleaf.org">
         </nav>
     </div>
     <div class="form">
-        <form th:action="@{/save}" method="post" class="col-md-4 offset-md-4">
-            <label for="novoproduto" style="text-align: center;">Novo Produto</label>
+        <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${produto}">
             <div class="mb-3">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control">
+                <label for="name" class="form-label">Nome do Produto</label>
+                <input type="text" name="name" th:value="${produto.name}" class="form-control">
             </div>
             <div class="mb-3">
-                <label for="price">Price</label>
-                <input type="text" name="price" class="form-control">
+                <label for="price" class="form-label">Preço do Produto</label>
+                <input type="number" name="price" th:value="${produto.price}" class="form-control">
             </div>
             <div class="mb-3">
-                <label for="descricao">Descrition</label>
-                <input type="text" name="descricao" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="imagem">Adicione Sua Imagem</label>
-              <input type="file" name="imagem" accept="imagem/*"><br><br>
+                <label for="descricao" class="form-label">Descrição do produto</label>
+                <input type="text" name="descricao" th:value="${produto.descricao}" class="form-control">
             </div>
             <div class="mb-3 text-center my-2">
-                <button type="submit" class="btn btn-primary">Salvar Produto</button>
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+
             </div>
-        </form> 
+        </form>
     </div>
 
 
@@ -60,6 +56,7 @@ xmlns:th="http://www.thymeleaf.org">
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  background: #f0f8ff; /* fundo azul clarinho */
 }
 
 /* Caixa do formulário */
@@ -69,7 +66,7 @@ form {
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
 }
 
 /* Rótulos */
@@ -77,23 +74,26 @@ form label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #1e3a8a; /* azul escuro */
 }
 
-/* Campos de entrada */
-form input[type="text"] {
+/* Campos de entrada (texto e número) */
+form input[type="text"],
+form input[type="number"] {
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #3b82f6; /* azul médio */
   border-radius: 8px;
   outline: none;
-  transition: border 0.3s;
+  background-color: #f0f9ff; /* azul bem clarinho */
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
-form input[type="text"]:focus {
+form input[type="text"]:focus,
+form input[type="number"]:focus {
   border-color: #0077cc;
-  box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+  box-shadow: 0 0 6px rgba(0, 119, 204, 0.3);
 }
 
 /* Botão */
@@ -125,15 +125,4 @@ form button:active {
   }
 }
 
-.mb-3 label {
-    color: #1e3a8a; /* azul escuro */
-    font-weight: bold;
-  }
-
-.mb-3 input[type="file"] {
-  border: 1px solid #3b82f6; /* azul médio */
-  border-radius: 4px;
-  padding: 6px;
-  background-color: #f0f9ff; /* azul bem clarinho */
-}
 </style>

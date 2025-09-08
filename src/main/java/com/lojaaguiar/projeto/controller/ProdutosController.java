@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lojaaguiar.projeto.service.ProdutosService;
 import com.lojaaguiar.projeto.entity.Produtos;
+
 @Controller
 public class ProdutosController {
     @Autowired
@@ -35,5 +36,12 @@ public class ProdutosController {
         return "redirect:/mostrarprodutos";
     }
 
+    @RequestMapping("/editproduto/{id}")
+    public String editProduto(@PathVariable("id") int id, Model model) {
+        Produtos p = produtoService.getProdutoById(id);
+        model.addAttribute("produto", p);
+        return "editproduto";
+    }
+    
 
 }

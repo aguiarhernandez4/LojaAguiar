@@ -37,6 +37,9 @@ public class LojaController {
         return "cadastroproduto";
     }
 
-    
+    @GetMapping("/editproduto")
+    public String edit_produto() {
+        return "editproduto";
+    }
 }
 
