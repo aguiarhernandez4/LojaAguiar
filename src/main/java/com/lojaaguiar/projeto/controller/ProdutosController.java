@@ -1,6 +1,10 @@
 package com.lojaaguiar.projeto.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +27,7 @@ public class ProdutosController {
         produtoService.save(p);
         return "redirect:produtos";
     }
+    
 
     @GetMapping("/mostrarprodutos")
     public String listarProdutos(Model model) {
@@ -43,5 +48,21 @@ public class ProdutosController {
         return "editproduto";
     }
     
+    @GetMapping("/produto/{id}/imagem")
+    public ResponseEntity<byte[]> getImagem(@PathVariable int id) {
+        Produtos produto = produtoService.getProdutoById(id);
+
+        byte[] imagem = produto.getImagem();
+
+        if (imagem == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_JPEG); // fixo para JPG
+
+        return new ResponseEntity<>(imagem, headers, HttpStatus.OK);
+    }
+
 
 }
