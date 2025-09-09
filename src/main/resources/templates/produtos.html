@@ -32,6 +32,7 @@ xmlns:th="http://www.thymeleaf.org">
             <h2 class="produto-nome" th:text="${p.name}"></h2>
             <p class="produto-descricao" th:text="${p.descricao}"></p>
             <span class="produto-preco" th:text="'R$ ' + ${p.price}"></span>
+            <img th:src="@{/produto/{id}/imagem(id=${p.id})}" alt="Imagem do produto">
             <a th:href="@{/deleteproduto/{id}(id = ${p.id})}" id="deletar">Deletar Anúncio</a>
             <a th:href="@{/editproduto/{id}(id = ${p.id})}" id="editar">Editar Produto</a>
         </div>
