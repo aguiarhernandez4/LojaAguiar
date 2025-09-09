@@ -105,16 +105,21 @@ xmlns:th="http://www.thymeleaf.org">
     margin-bottom: 15px;
 }
 
-/* Botão Deletar */
-#deletar {
+/* Botões de ação */
+#deletar, #editar {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #e74c3c;
-    color: #fff;
+    margin: 5px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Botão Deletar */
+#deletar {
+    background-color: #e74c3c;
+    color: #fff;
 }
 
 #deletar:hover {
@@ -123,6 +128,21 @@ xmlns:th="http://www.thymeleaf.org">
 }
 
 #deletar:active {
+    transform: scale(0.95);
+}
+
+/* Botão Editar */
+#editar {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#editar:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#editar:active {
     transform: scale(0.95);
 }
 

@@ -15,7 +15,7 @@ public class Produtos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private int price;
+    private Double price;
     private String descricao;
 
     @Lob
@@ -28,8 +28,8 @@ public class Produtos {
     public String getName() {return name;}
     public void setName(String name){this.name = name;}
 
-    public int getPrice(){return price;}
-    public void setPrice(int price) {this.price = price;}
+    public Double getPrice(){return price;}
+    public void setPrice(Double price) {this.price = price;}
 
     public String getDescricao() {return descricao;}
     public void setDescricao(String descricao) {this.descricao = descricao;}
@@ -37,7 +37,7 @@ public class Produtos {
     public byte[] getImagem() { return imagem; }
     public void setImagem(byte[] imagem){ this.imagem = imagem;}
 
-    public Produtos(int id, String name, int price, String descricao, byte[] imagem) {
+    public Produtos(int id, String name, Double price, String descricao, byte[] imagem) {
         super();
         this.id = id;
         this.name = name;

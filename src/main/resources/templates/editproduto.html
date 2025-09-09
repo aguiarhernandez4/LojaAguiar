@@ -38,6 +38,10 @@ xmlns:th="http://www.thymeleaf.org">
                 <label for="descricao" class="form-label">Descrição do produto</label>
                 <input type="text" name="descricao" th:value="${produto.descricao}" class="form-control">
             </div>
+            <div class="mb-3">
+              <label for="imagem" class="form-label">Adicione Sua Imagem</label>
+              <input type="file" name="imagem" accept="imagem/*">
+            </div>
             <div class="mb-3 text-center my-2">
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
 
