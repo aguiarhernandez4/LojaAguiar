@@ -27,7 +27,7 @@ public class ProdutosController {
         produtoService.save(p);
         return "redirect:produtos";
     }
-    
+
 
     @GetMapping("/mostrarprodutos")
     public String listarProdutos(Model model) {
@@ -47,7 +47,7 @@ public class ProdutosController {
         model.addAttribute("produto", p);
         return "editproduto";
     }
-    
+
     @GetMapping("/produto/{id}/imagem")
     public ResponseEntity<byte[]> getImagem(@PathVariable int id) {
         Produtos produto = produtoService.getProdutoById(id);
