@@ -27,7 +27,7 @@ public class LojaController {
         return "cadastro";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/entrar")
     public String login() {
         return "login";
     }

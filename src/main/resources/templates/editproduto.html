@@ -19,7 +19,7 @@ xmlns:th="http://www.thymeleaf.org">
                 <a href="/produtos">PRODUTOS</a>
                 <a href="/cadastro">CADASTRO/LOGIN</a>
                 <a href="https://www.instagram.com/joaopedroaguiarde/" target="_blank">INSTAGRAM</a>
-                <a href="/login">LOGIN</a>
+                <a href="/entrar">LOGIN</a>
                 <a href="/cadastroproduto">NOVO PRODUTO</a>
             </div>
         </nav>
@@ -37,10 +37,6 @@ xmlns:th="http://www.thymeleaf.org">
             <div class="mb-3">
                 <label for="descricao" class="form-label">Descrição do produto</label>
                 <input type="text" name="descricao" th:value="${produto.descricao}" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="imagem" class="form-label">Adicione Sua Imagem</label>
-              <input type="file" name="imagem" accept="imagem/*">
             </div>
             <div class="mb-3 text-center my-2">
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>

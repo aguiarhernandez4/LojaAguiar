@@ -15,4 +15,8 @@ public class ProdutosCreateDTO {
     @Positive(message = "O preço deve serm maior que zero")
     private Double preco;
 
+
+    @NotNull(message = "Você precisa adicionar uma imagem")
+    @NotBlank(message = "Você precisa adicionar uma imagem")
+    private byte[] imagem;
 }
