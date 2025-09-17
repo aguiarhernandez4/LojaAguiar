@@ -41,5 +41,11 @@ public class LojaController {
     public String edit_produto() {
         return "editproduto";
     }
+
+    @GetMapping("/telacompra")
+    public String tela_compra() {
+        return "telacompra";
+    }
+
 }
 
