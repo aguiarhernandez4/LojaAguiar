@@ -9,8 +9,6 @@ import com.lojaaguiar.projeto.service.ProdutosService;
 
 @Controller
 public class LojaController {
-    @Autowired
-    ProdutosService produtoService;
 
     @GetMapping("/home")
     public String home() {

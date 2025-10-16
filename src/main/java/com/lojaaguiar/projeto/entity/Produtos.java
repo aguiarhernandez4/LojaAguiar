@@ -8,47 +8,39 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "produtos")
 public class Produtos {
     @Id
+    @Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "price")
     private Double price;
+
+    @Column(name = "descricao")
     private String descricao;
 
     @Lob
     @Column(columnDefinition = "LONGBLOB")
     private byte[] imagem;
-
-    public int getId(){return id;}
-    public void setId(int id) {this.id = id;}
-
-    public String getName() {return name;}
-    public void setName(String name){this.name = name;}
-
-    public Double getPrice(){return price;}
-    public void setPrice(Double price) {this.price = price;}
-
-    public String getDescricao() {return descricao;}
-    public void setDescricao(String descricao) {this.descricao = descricao;}
-
-    public byte[] getImagem() { return imagem; }
-    public void setImagem(byte[] imagem){ this.imagem = imagem;}
-
-    public Produtos(int id, String name, Double price, String descricao, byte[] imagem) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.descricao = descricao;
-        this.imagem = imagem;
-    }
-
-    public Produtos(){
-        super();
-    }
 
 
 }
