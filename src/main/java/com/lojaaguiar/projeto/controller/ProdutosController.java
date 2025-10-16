@@ -48,21 +48,4 @@ public class ProdutosController {
         return "editproduto";
     }
 
-    @GetMapping("/produto/{id}/imagem")
-    public ResponseEntity<?> getImagem(@PathVariable int id) {
-        Produtos produto = produtoService.getProdutoById(id);
-        byte[] imagem = produto.getImagem();
-
-        if (imagem == null || imagem.length == 0) {
-            return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body("Este produto não possui imagem cadastrada.");
-        }
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.IMAGE_JPEG);
-
-        return new ResponseEntity<>(imagem, headers, HttpStatus.OK);
-    }
-
 }
