@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.lojaaguiar.projeto.entity.Usuario;
 
 import java.util.Optional;
+import java.util.List;
+
 
 @Repository
 public interface UsuariosRepository extends JpaRepository<Usuario, Integer>{

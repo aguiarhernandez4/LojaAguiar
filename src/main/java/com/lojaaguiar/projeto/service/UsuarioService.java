@@ -1,5 +1,6 @@
 package com.lojaaguiar.projeto.service;
 
+import com.lojaaguiar.projeto.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -12,7 +13,6 @@ import com.lojaaguiar.projeto.repository.UsuariosRepository;
 public class UsuarioService {
     @Autowired
     UsuariosRepository usuariosRepo;
-
 
     public void save(Usuario u) {
         usuariosRepo.save(u);
