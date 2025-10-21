@@ -31,6 +31,7 @@ public class ProdutosService {
     
     public Produtos getProdutoById(int id) {
     return produtosRepo.findById(id).orElseThrow(() -> new RuntimeException("Produto não encontrado"));
-}
+    }
+
 
 }

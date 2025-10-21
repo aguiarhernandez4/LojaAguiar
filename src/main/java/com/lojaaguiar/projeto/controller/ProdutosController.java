@@ -2,7 +2,6 @@ package com.lojaaguiar.projeto.controller;
 
 import com.lojaaguiar.projeto.repository.ProdutosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -61,5 +60,4 @@ public class ProdutosController {
                 .contentType(MediaType.IMAGE_JPEG)
                 .body(produto.getImagem());
     }
-
 }
