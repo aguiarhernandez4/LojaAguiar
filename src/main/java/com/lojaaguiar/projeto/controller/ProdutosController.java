@@ -48,7 +48,8 @@ public class ProdutosController {
         return "editproduto";
     }
 
-    @GetMapping("/{id}")
+
+    @GetMapping("/imagem/{id}")
     public ResponseEntity<byte[]> getImagem(@PathVariable int id){
         Produtos produto = produtoRepo.findById(id).orElse(null);
 
@@ -56,8 +57,9 @@ public class ProdutosController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "image/jpeg");
-        return new ResponseEntity<>(produto.getImagem(), headers, HttpStatus.OK);
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_JPEG)
+                .body(produto.getImagem());
     }
+
 }
